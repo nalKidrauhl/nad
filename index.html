@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<title> </title>
+</head>
 <style>
-	*{
+*{
 	margin: 0;
 	padding: 0;
 }
@@ -99,17 +102,17 @@ a.active, .nav a:hover{
 	line-height: 28px;
 	margin-bottom: 15px;
 }
-.thingsilove{
+.gallery{
 	position: absolute;
 	right: 0;
-	top: 0px;
+	top: 10px;
 	color: white;
 	padding: 0 60px;
 	display: none;
 }
-.thingsilove .image{
-	width: 38%;
-	margin: 2%;
+.gallery .image{
+	width: 31%;
+	margin: 1%;
 	float: left;
 }
 .image img{
@@ -120,8 +123,50 @@ a.active, .nav a:hover{
 	-webkit-transform: scale(1);
 }
 .image img:hover{
-	transform: scale(1,2);
-	-webkit-transform: scale(1,2);
+	transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+}
+.contactme{
+	position: absolute;
+	right: 0;
+	top: 10px;
+	color: white;
+	padding: 0 60px;
+	display: none;
+}
+.inputtext{
+	width: 55%;
+	height: 65px;
+	border: 3px solid black;
+	color: white;
+	background-color: rgba(0,0,0,0.7);
+	font-size: 20px;
+	padding: 0 10px:
+	float: left;
+	margin-bottom: 15px;
+}
+.inputmessage{
+	width: 55%;
+	height: 135px;
+	border: 3px solid black;
+	color: white;
+	background-color: rgba(0,0,0,0.7);
+	font-size: 20px;
+	padding: 0 10px;
+	float: left;
+}
+.submitbutton{
+	width: 160px;
+	height: 65px;
+	font-family: arial;
+	background-color: white;
+	color: black;
+	font-size: 28px;
+	border: none;
+	font-weight: bold;
+	float: left;
+	clear: both;
+	margin-top: 25px;
 }
 </style>
 <head>
@@ -133,7 +178,8 @@ a.active, .nav a:hover{
 		<div class="nav">
 			<a class="a active" href="#">HOME</a>
 			<a class="b" href="#">ABOUT ME</a>
-			<a class="c" href="#">THINGS I LOVE</a>
+			<a class="c" href="#">MY GALLERY</a>
+			<a class="d" href="#">CONTACT ME</a>
 		</div>
 			<div class="content">
 				
@@ -170,7 +216,18 @@ a.active, .nav a:hover{
 							<iframe width="420" height="315" src="https://www.youtube.com/embed/iJZ0gfKPo?autoplay=1"></iframe>
 							<p>Boom Music Video by Nct Dream</p>
 					</div>
-				</div>					
+				</div>	
+				<div class="contactme">
+					<div class="contactform">
+					<form action="index2.html" method="post">
+						<input type="text" name="" class="inputtext" value="Full Name">
+						<input type="text" name="" class="inputtext" value="Last Name">
+						<input type="text" name="" class="inputtext" value="Your Email">
+						<textarea cols="4" rows="6" class="inputmessage">Your Messages..!!!</textarea>
+						<input type="button" name="" class="submitbutton" value="submit">
+					</form>
+					</div>
+				</div>
 			</div>
 	</div>							
 	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
@@ -186,20 +243,33 @@ a.active, .nav a:hover{
 			var $a = $('.a'),
 			$b = $('.b'),
 			$c = $('.c'),
+			$d = $('.d'),
 			$home = $('.home'),
 			$aboutme = $('.aboutme'),
-			$thingsilove = $('.thingsilove');
+			$gallery = $('.gallery'),
+			$contactme = $('.contactme');
 			
 			$a.click(function(){
 				$home.fadeIn();
-				$aboutme.fadeOut();				
+				$aboutme.fadeOut();
+				$gallery.fadeOut();
+				$contactme.fadeOut();			
 			});
 			$b.click(function(){
-				$home.fadeOut();
 				$aboutme.fadeIn();				
+				$home.fadeOut();
+				$gallery.fadeOut();
+				$contactme.fadeOut();			
 			});
 			$c.click(function(){
-				$thingsilove.fadeIn();
+				$gallery.fadeIn();
+				$home.fadeOut();
+				$aboutme.fadeOut();
+				$contactme.fadeOut();		
+			});
+			$c.click(function(){
+				$contactme.fadeIn();
+				$gallery.fadeOut();
 				$home.fadeOut();
 				$aboutme.fadeOut();			
 			});
